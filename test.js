@@ -30,3 +30,13 @@ test('dequeue', t => {
   t.is(queue.size, 1);
 
 });
+
+test('front', t => {
+
+  var queue = createQueue('hat', 2);
+  var frontElement = queue.front();
+  t.is(frontElement, 'hat');
+  t.is(queue.size, 2);
+
+});
+
