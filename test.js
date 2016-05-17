@@ -22,3 +22,11 @@ test('enqueue', t => {
 
 });
 
+test('dequeue', t => {
+
+  var queue = createQueue('hat', 2);
+  var dequeued = queue.dequeue();
+  t.is(dequeued, 'hat');
+  t.is(queue.size, 1);
+
+});
