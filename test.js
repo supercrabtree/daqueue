@@ -13,3 +13,12 @@ test('Create queue', t => {
   t.is(queue2.size, 3);
 
 });
+
+test('enqueue', t => {
+
+  var queue = createQueue(1, 2);
+  queue.enqueue('hat');
+  t.is(queue.size, 3);
+
+});
+
