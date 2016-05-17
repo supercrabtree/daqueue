@@ -48,6 +48,7 @@ module.exports = function () {
       value: function (data) {
         dataStore[newestIndex] = data;
         newestIndex++;
+        return this;
       }
     },
     dequeue: {
