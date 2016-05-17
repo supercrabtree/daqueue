@@ -1,6 +1,6 @@
 {
   "name": "daqueue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Queue data structure in js",
   "main": "index.js",
   "scripts": {
