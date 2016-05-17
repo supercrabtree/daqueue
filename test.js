@@ -47,3 +47,12 @@ test('toString', t => {
 
 });
 
+test('toArray', t => {
+
+  var queue = createQueue('hat', 2);
+  var queueAsArray = queue.toArray();
+  t.is(queue.size, 2);
+  t.deepEqual(queueAsArray, ['hat', 2]);
+
+});
+
