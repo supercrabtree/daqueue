@@ -40,3 +40,10 @@ test('front', t => {
 
 });
 
+test('toString', t => {
+
+  var queue = createQueue('hat', 2, 5);
+  t.is(queue.toString(), 'hat,2,5');
+
+});
+
