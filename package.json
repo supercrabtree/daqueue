@@ -1,7 +1,7 @@
 {
   "name": "daqueue",
   "version": "0.0.1",
-  "description": "Queue data structure in js",
+  "description": "A queue written in clean es5",
   "main": "index.js",
   "scripts": {
     "test": "ava",
