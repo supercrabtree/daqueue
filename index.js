@@ -2,7 +2,8 @@ module.exports = function () {
   'use strict';
 
 
-  // for keeping track of items in the queue
+  // for keeping track of items in the queue, using separate indexs rather than
+  // array.unshift to keep a time complexity of O(1)
 
   var newestIndex = 0;
   var oldestIndex = 0;
@@ -46,8 +47,11 @@ module.exports = function () {
     dequeue: {
       value: function () {
         var item = dataStore[oldestIndex];
+
+        // set to undefined to ensure no memory leaks
         dataStore[oldestIndex] = undefined;
         oldestIndex++;
+
         return item;
       }
     },
