@@ -63,6 +63,7 @@ Gets the next item in the queue.
 var queue = createQueue('hat', 'tree', 'golf');
 
 queue.daqueue() // => 'hat'
+// queue is => ['tree', 'golf']
 ```
 
 #### queue.toString()
