@@ -35,6 +35,12 @@ module.exports = function () {
       }
     },
 
+    front: {
+      get: function () {
+        return dataStore[oldestIndex];
+      }
+    },
+
 
     // methods
 
@@ -53,11 +59,6 @@ module.exports = function () {
         oldestIndex++;
 
         return item;
-      }
-    },
-    front: {
-      value: function () {
-        return dataStore[oldestIndex];
       }
     },
     toString: {

@@ -14,6 +14,14 @@ test('Create queue', t => {
 
 });
 
+test('front', t => {
+
+  var queue = createQueue('hat', 2);
+  t.is(queue.front, 'hat');
+  t.is(queue.size, 2);
+
+});
+
 test('enqueue', t => {
 
   var queue = createQueue(1, 2);
@@ -28,15 +36,6 @@ test('dequeue', t => {
   var dequeued = queue.dequeue();
   t.is(dequeued, 'hat');
   t.is(queue.size, 1);
-
-});
-
-test('front', t => {
-
-  var queue = createQueue('hat', 2);
-  var frontElement = queue.front();
-  t.is(frontElement, 'hat');
-  t.is(queue.size, 2);
 
 });
 
