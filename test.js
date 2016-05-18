@@ -4,7 +4,7 @@ import createQueue from './';
 console.log();
 console.log(Date.now());
 
-test('Create queue', t => {
+test('size', t => {
 
   var queue = createQueue();
   t.is(queue.size, 0);
@@ -22,7 +22,7 @@ test('front', t => {
 
 });
 
-test('enqueue', t => {
+test('enqueue()', t => {
 
   var queue = createQueue(1, 2);
   queue.enqueue('hat');
@@ -30,7 +30,7 @@ test('enqueue', t => {
 
 });
 
-test('dequeue', t => {
+test('dequeue()', t => {
 
   var queue = createQueue('hat', 2);
   var dequeued = queue.dequeue();
@@ -39,14 +39,14 @@ test('dequeue', t => {
 
 });
 
-test('toString', t => {
+test('toString()', t => {
 
   var queue = createQueue('hat', 2, 5);
   t.is(queue.toString(), 'hat,2,5');
 
 });
 
-test('toArray', t => {
+test('toArray()', t => {
 
   var queue = createQueue('hat', 2);
   var queueAsArray = queue.toArray();
