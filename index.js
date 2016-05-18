@@ -24,56 +24,44 @@ module.exports = function () {
   }
 
 
-  var queue = Object.create(null, {
+  var queue = {
 
 
     // properties
 
-    size: {
-      get: function () {
-        return newestIndex - oldestIndex;
-      }
+    get size() {
+      return newestIndex - oldestIndex;
     },
 
-    front: {
-      get: function () {
-        return dataStore[oldestIndex];
-      }
+    get front() {
+      return dataStore[oldestIndex];
     },
 
 
     // methods
 
-    enqueue: {
-      value: function (data) {
-        dataStore[newestIndex] = data;
-        newestIndex++;
-        return queue;
-      }
+    enqueue: function (data) {
+      dataStore[newestIndex] = data;
+      newestIndex++;
+      return queue;
     },
-    dequeue: {
-      value: function () {
-        var item = dataStore[oldestIndex];
+    dequeue: function () {
+      var item = dataStore[oldestIndex];
 
-        // set to undefined to ensure no memory leaks
-        dataStore[oldestIndex] = undefined;
-        oldestIndex++;
+      // set to undefined to ensure no memory leaks
+      dataStore[oldestIndex] = undefined;
+      oldestIndex++;
 
-        return item;
-      }
+      return item;
     },
-    toString: {
-      value: function () {
-        return queue.toArray().toString();
-      }
+    toString: function () {
+      return queue.toArray().toString();
     },
-    toArray: {
-      value: function () {
-        return dataStore.slice(oldestIndex);
-      }
+    toArray: function () {
+      return dataStore.slice(oldestIndex);
     }
-  });
+  };
 
-  return queue;
+  return Object.freeze(queue);
 
 };
