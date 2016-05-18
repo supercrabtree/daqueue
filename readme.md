@@ -62,7 +62,7 @@ Gets the next item in the queue.
 ```js
 var queue = createQueue('hat', 'tree', 'golf');
 
-queue.daqueue() // => 'hat'
+queue.dequeue() // => 'hat'
 // queue is => ['tree', 'golf']
 ```
 
