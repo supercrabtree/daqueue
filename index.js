@@ -24,7 +24,7 @@ module.exports = function () {
   }
 
 
-  return Object.create(null, {
+  var queue = Object.create(null, {
 
 
     // properties
@@ -48,7 +48,7 @@ module.exports = function () {
       value: function (data) {
         dataStore[newestIndex] = data;
         newestIndex++;
-        return this;
+        return queue;
       }
     },
     dequeue: {
@@ -64,7 +64,7 @@ module.exports = function () {
     },
     toString: {
       value: function () {
-        return this.toArray().toString();
+        return queue.toArray().toString();
       }
     },
     toArray: {
@@ -73,5 +73,7 @@ module.exports = function () {
       }
     }
   });
+
+  return queue;
 
 };
