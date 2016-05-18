@@ -55,3 +55,12 @@ test('toArray()', t => {
 
 });
 
+test('queue is immutable', t => {
+
+  var queue = createQueue();
+  t.throws(() => queue.hat = 'yay');
+  t.throws(() => queue.dequeue = 1);
+  t.throws(() => delete queue.dequeue);
+
+});
+
